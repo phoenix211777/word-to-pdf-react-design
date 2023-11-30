@@ -12,6 +12,18 @@ const getIcon = (name: string) => (
 );
 
 const ICONS = {
+  bag: getIcon('Bag'),
+  cate: getIcon('Category'),
+  chat: getIcon('Chat'),
+  doc: getIcon('Document'),
+  edit: getIcon('Edit-Square'),
+  filter: getIcon('Filter'),
+  home: getIcon('Home'),
+  image: getIcon('Image'),
+  setting: getIcon('Setting'),
+};
+
+const ICONS_ORIGIN = {
   blog: getIcon('ic_blog'),
   cart: getIcon('ic_cart'),
   chat: getIcon('ic_chat'),
@@ -29,142 +41,27 @@ const ICONS = {
 };
 
 const navConfig = [
-  // GENERAL
-  // ----------------------------------------------------------------------
   {
-    subheader: 'general',
+    subheader: '',
     items: [
-      { title: 'app', path: PATH_DASHBOARD.general.app, icon: ICONS.dashboard },
-      { title: 'ecommerce', path: PATH_DASHBOARD.general.ecommerce, icon: ICONS.ecommerce },
-      { title: 'analytics', path: PATH_DASHBOARD.general.analytics, icon: ICONS.analytics },
-      { title: 'banking', path: PATH_DASHBOARD.general.banking, icon: ICONS.banking },
-      { title: 'booking', path: PATH_DASHBOARD.general.booking, icon: ICONS.booking },
-    ],
-  },
-
-  // MANAGEMENT
-  // ----------------------------------------------------------------------
-  {
-    subheader: 'management',
-    items: [
-      // USER
+      { title: 'dashboard', path: PATH_DASHBOARD.general.app, icon: ICONS.home },
       {
-        title: 'user',
-        path: PATH_DASHBOARD.user.root,
-        icon: ICONS.user,
-        children: [
-          { title: 'profile', path: PATH_DASHBOARD.user.profile },
-          { title: 'cards', path: PATH_DASHBOARD.user.cards },
-          { title: 'list', path: PATH_DASHBOARD.user.list },
-          { title: 'create', path: PATH_DASHBOARD.user.new },
-          { title: 'edit', path: PATH_DASHBOARD.user.demoEdit },
-          { title: 'account', path: PATH_DASHBOARD.user.account },
-        ],
+        title: 'nieuwe aanmeldingen',
+        path: PATH_DASHBOARD.general.ecommerce,
+        icon: ICONS.edit,
       },
-
-      // E-COMMERCE
+      { title: 'projecten', path: PATH_DASHBOARD.general.analytics, icon: ICONS.image },
+      { title: 'schrijvers', path: PATH_DASHBOARD.general.banking, icon: ICONS.doc },
       {
-        title: 'ecommerce',
-        path: PATH_DASHBOARD.eCommerce.root,
-        icon: ICONS.cart,
-        children: [
-          { title: 'shop', path: PATH_DASHBOARD.eCommerce.shop },
-          { title: 'product', path: PATH_DASHBOARD.eCommerce.demoView },
-          { title: 'list', path: PATH_DASHBOARD.eCommerce.list },
-          { title: 'create', path: PATH_DASHBOARD.eCommerce.new },
-          { title: 'edit', path: PATH_DASHBOARD.eCommerce.demoEdit },
-          { title: 'checkout', path: PATH_DASHBOARD.eCommerce.checkout },
-        ],
+        title: 'berichten',
+        path: PATH_DASHBOARD.general.booking,
+        icon: ICONS.chat,
+        info: <Label color="error">1</Label>,
       },
-
-      // INVOICE
-      {
-        title: 'invoice',
-        path: PATH_DASHBOARD.invoice.root,
-        icon: ICONS.invoice,
-        children: [
-          { title: 'list', path: PATH_DASHBOARD.invoice.list },
-          { title: 'details', path: PATH_DASHBOARD.invoice.demoView },
-          { title: 'create', path: PATH_DASHBOARD.invoice.new },
-          { title: 'edit', path: PATH_DASHBOARD.invoice.demoEdit },
-        ],
-      },
-
-      // BLOG
-      {
-        title: 'blog',
-        path: PATH_DASHBOARD.blog.root,
-        icon: ICONS.blog,
-        children: [
-          { title: 'posts', path: PATH_DASHBOARD.blog.posts },
-          { title: 'post', path: PATH_DASHBOARD.blog.demoView },
-          { title: 'create', path: PATH_DASHBOARD.blog.new },
-        ],
-      },
-    ],
-  },
-
-  // APP
-  // ----------------------------------------------------------------------
-  {
-    subheader: 'app',
-    items: [
-      {
-        title: 'mail',
-        path: PATH_DASHBOARD.mail.root,
-        icon: ICONS.mail,
-        info: <Label color="error">+32</Label>,
-      },
-      { title: 'chat', path: PATH_DASHBOARD.chat.root, icon: ICONS.chat },
-      { title: 'calendar', path: PATH_DASHBOARD.calendar, icon: ICONS.calendar },
-      { title: 'kanban', path: PATH_DASHBOARD.kanban, icon: ICONS.kanban },
-    ],
-  },
-
-  // DEMO MENU STATES
-  {
-    subheader: 'Other cases',
-    items: [
-      {
-        // default roles : All roles can see this entry.
-        // roles: ['user'] Only users can see this item.
-        // roles: ['admin'] Only admin can see this item.
-        // roles: ['admin', 'manager'] Only admin/manager can see this item.
-        // Reference from 'src/guards/RoleBasedGuard'.
-        title: 'item_by_roles',
-        path: PATH_DASHBOARD.permissionDenied,
-        icon: ICONS.menuItem,
-        roles: ['admin'],
-        caption: 'only_admin_can_see_this_item',
-      },
-      {
-        title: 'menu_level_1',
-        path: '#1',
-        icon: ICONS.menuItem,
-        children: [
-          { title: 'menu_level_2', path: '#2', disabled: true },
-          {
-            title: 'menu_level_2',
-            path: '#3',
-            children: [
-              { title: 'menu_level_3', path: '#4' },
-              { title: 'menu_level_3', path: '#5' },
-            ],
-          },
-        ],
-      },
-      { title: 'item_disabled', path: '#disabled', icon: ICONS.menuItem, disabled: true },
-      {
-        title: 'item_label',
-        path: '#label',
-        icon: ICONS.menuItem,
-        info: (
-          <Label color="info" startIcon={<Iconify icon="eva:email-fill" />}>
-            NEW
-          </Label>
-        ),
-      },
-      { title: 'item_caption', path: '#caption', icon: ICONS.menuItem, caption: 'description' },
+      { title: 'team', path: PATH_DASHBOARD.general.banking, icon: ICONS.cate },
+      { title: 'templates', path: PATH_DASHBOARD.general.banking, icon: ICONS.bag },
+      { title: 'settings', path: PATH_DASHBOARD.general.banking, icon: ICONS.setting },
+      { title: 'tools', path: PATH_DASHBOARD.tools, icon: ICONS.filter },
     ],
   },
 ];

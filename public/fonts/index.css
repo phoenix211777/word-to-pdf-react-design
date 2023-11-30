@@ -16,3 +16,38 @@
   font-style: normal;
   src: local('CircularStd'), url('CircularStd-Bold.otf') format('opentype');
 }
+
+@font-face {
+  font-family: 'Epilogue';
+  src: local('Epilogue'), url('Epilogue-09D4.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Epilogue';
+  src: local('Epilogue'), url('Epilogue-09D4.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Epilogue';
+  src: local('Epilogue'), url('Epilogue-VariableFont_wght.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: local('Poppins'), url('Poppins-Light.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: local('Inter'), url('Inter-VariableFont_slnt\,wght.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto'), url('Roboto-Regular.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: local('DM Sans') url('DM_Sans/DMSans-VariableFont_opsz\,wght.ttf') format('opentype');
+}
