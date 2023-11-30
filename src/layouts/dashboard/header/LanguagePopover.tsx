@@ -33,17 +33,12 @@ export default function LanguagePopover() {
       <IconButtonAnimate
         onClick={handleOpen}
         sx={{
-          width: 46,
-          height: 46,
+          width: 40,
+          height: 40,
           ...(open && { bgcolor: 'action.selected' }),
         }}
       >
-        <Image
-          sx={{ width: 46, height: 24 }}
-          disabledEffect
-          src={currentLang.icon}
-          alt={currentLang.label}
-        />
+        <Image disabledEffect src={currentLang.icon} alt={currentLang.label} />
       </IconButtonAnimate>
 
       <MenuPopover

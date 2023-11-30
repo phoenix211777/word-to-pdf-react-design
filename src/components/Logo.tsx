@@ -22,12 +22,6 @@ export default function Logo({ disabledLink = false, sx }: Props) {
   // const logo = '/logo/logo_single.svg';
 
   const logo = (
-    <Box sx={{ width: 345, height: 85, ...sx }}>
-      <img src="/logo/logo.png" className="logo" alt="logo" />
-    </Box>
-  );
-
-  const logo_origin = (
     <Box sx={{ width: 40, height: 40, ...sx }}>
       <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 512 512">
         <defs>

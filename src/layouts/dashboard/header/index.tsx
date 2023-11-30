@@ -18,7 +18,6 @@ import AccountPopover from './AccountPopover';
 import LanguagePopover from './LanguagePopover';
 import ContactsPopover from './ContactsPopover';
 import NotificationsPopover from './NotificationsPopover';
-import HeaderTitle from 'src/components/HeaderTitle';
 
 // ----------------------------------------------------------------------
 
@@ -89,10 +88,12 @@ export default function DashboardHeader({
           </IconButtonAnimate>
         )}
 
-        <HeaderTitle title="Format a book" />
+        <Searchbar />
         <Box sx={{ flexGrow: 1 }} />
 
         <Stack direction="row" alignItems="center" spacing={{ xs: 0.5, sm: 1.5 }}>
+          <LanguagePopover />
+          <NotificationsPopover />
           <ContactsPopover />
           <AccountPopover />
         </Stack>

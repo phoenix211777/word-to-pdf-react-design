@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import ReactQuill, { ReactQuillProps } from 'react-quill';
 // @mui
 import { styled } from '@mui/material/styles';
-import { Box, BoxProps, Card, Stack } from '@mui/material';
+import { Box, BoxProps } from '@mui/material';
 //
 import EditorToolbar, { formats, redoChange, undoChange } from './EditorToolbar';
 
@@ -81,19 +81,15 @@ export default function Editor({
           ...sx,
         }}
       >
-        <EditorToolbar id={id} isSimple={false} />
-        <Card sx={{ p: 3, mt: 1, borderRadius: 0, border: '1px solid #d2d2d2' }}>
-          <Stack spacing={3}>
-            <ReactQuill
-              value={value}
-              onChange={onChange}
-              modules={modules}
-              formats={formats}
-              placeholder="Write something awesome..."
-              {...other}
-            />
-          </Stack>
-        </Card>
+        <EditorToolbar id={id} isSimple={simple} />
+        <ReactQuill
+          value={value}
+          onChange={onChange}
+          modules={modules}
+          formats={formats}
+          placeholder="Write something awesome..."
+          {...other}
+        />
       </RootStyle>
 
       {helperText && helperText}

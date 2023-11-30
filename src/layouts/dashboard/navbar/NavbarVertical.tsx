@@ -60,8 +60,6 @@ export default function NavbarVertical({ isOpenSidebar, onCloseSidebar }: Props)
       sx={{
         height: 1,
         '& .simplebar-content': { height: 1, display: 'flex', flexDirection: 'column' },
-        backgroundColor: '#22263E',
-        width: '340px',
       }}
     >
       <Stack
@@ -81,11 +79,15 @@ export default function NavbarVertical({ isOpenSidebar, onCloseSidebar }: Props)
             <CollapseButton onToggleCollapse={onToggleCollapse} collapseClick={collapseClick} />
           )}
         </Stack>
+
+        <NavbarAccount isCollapse={isCollapse} />
       </Stack>
 
       <NavSectionVertical navConfig={navConfig} isCollapse={isCollapse} />
 
       <Box sx={{ flexGrow: 1 }} />
+
+      {!isCollapse && <NavbarDocs />}
     </Scrollbar>
   );
 

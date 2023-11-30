@@ -36,17 +36,15 @@ export default function ContactsPopover() {
         color={open ? 'primary' : 'default'}
         onClick={handleOpen}
         sx={{
-          width: 56,
-          height: 56,
+          width: 40,
+          height: 40,
           ...(open && {
             bgcolor: (theme) =>
               alpha(theme.palette.primary.main, theme.palette.action.focusOpacity),
           }),
         }}
       >
-        <img src="/assets/icons/header/Chat.svg" />
-        {/* <Iconify icon={'/assets/icons/header/Chat.svg'} width={48} height={48} /> */}
-        {/* <Avatar src="/assets/icons/header/Chat.svg" width={48} height={48} /> */}
+        <Iconify icon={'eva:people-fill'} width={20} height={20} />
       </IconButtonAnimate>
 
       <MenuPopover

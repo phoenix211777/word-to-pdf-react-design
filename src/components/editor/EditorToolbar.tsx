@@ -76,10 +76,7 @@ type EditorToolbarProps = {
 
 export default function EditorToolbar({ id, isSimple, ...other }: EditorToolbarProps) {
   return (
-    <EditorToolbarStyle
-      {...other}
-      sx={{ backgroundColor: 'white', border: '1px solid #d2d2d2', margin: 0 }}
-    >
+    <EditorToolbarStyle {...other}>
       <div id={id}>
         <div className="ql-formats">
           {!isSimple && (
@@ -93,7 +90,7 @@ export default function EditorToolbar({ id, isSimple, ...other }: EditorToolbarP
             </select>
           )}
 
-          {/* {!isSimple && (
+          {!isSimple && (
             <select className="ql-size" defaultValue="16px">
               {FONT_SIZE.map((size) => (
                 <option key={size} value={size}>
@@ -101,7 +98,7 @@ export default function EditorToolbar({ id, isSimple, ...other }: EditorToolbarP
                 </option>
               ))}
             </select>
-          )} */}
+          )}
 
           <select className="ql-header" defaultValue="">
             {HEADINGS.map((heading, index) => (
@@ -141,7 +138,7 @@ export default function EditorToolbar({ id, isSimple, ...other }: EditorToolbarP
           </div>
         )}
 
-        {/* {!isSimple && (
+        {!isSimple && (
           <div className="ql-formats">
             <button type="button" className="ql-code-block" />
             <button type="button" className="ql-blockquote" />
@@ -151,15 +148,15 @@ export default function EditorToolbar({ id, isSimple, ...other }: EditorToolbarP
         <div className="ql-formats">
           <button type="button" className="ql-direction" value="rtl" />
           <select className="ql-align" />
-        </div> */}
+        </div>
 
         <div className="ql-formats">
           <button type="button" className="ql-link" />
           <button type="button" className="ql-image" />
-          {/* <button type="button" className="ql-video" /> */}
+          <button type="button" className="ql-video" />
         </div>
 
-        {/* <div className="ql-formats">
+        <div className="ql-formats">
           {!isSimple && <button type="button" className="ql-formula" />}
           <button type="button" className="ql-clean" />
         </div>
@@ -173,7 +170,7 @@ export default function EditorToolbar({ id, isSimple, ...other }: EditorToolbarP
               <Iconify icon={'ic:round-redo'} width={18} height={18} />
             </button>
           </div>
-        )} */}
+        )}
       </div>
     </EditorToolbarStyle>
   );

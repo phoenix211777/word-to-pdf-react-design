@@ -248,3 +248,30 @@
   border: none;
   outline: none;
 }
+
+input[type='date']::-webkit-inner-spin-button,
+input[type='date']::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}
+
+.css-18o87os-MuiButtonBase-root-MuiSwitch-switchBase.Mui-checked {
+  color: white !important;
+  /* height: 32px !important; */
+  /* width: 32px !important; */
+  border-radius: 4px !important;
+}
+
+/* background-color: #0aa37f !important; */
+
+.dropwrapper {
+  padding: 70px 140px 60px 70px !important;
+}
+
+.dropheader {
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500px;
+  line-height: normal;
+  font-family: 'DM Sans';
+}

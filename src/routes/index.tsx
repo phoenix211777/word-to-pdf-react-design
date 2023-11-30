@@ -36,24 +36,6 @@ const Loadable = (Component: ElementType) => (props: any) => {
 export default function Router() {
   return useRoutes([
     {
-      path: '*',
-      element: <DashboardLayout />,
-      children: [
-        { element: <Navigate to={PATH_AFTER_LOGIN} replace />, index: true },
-        { path: 'app', element: <GeneralApp /> },
-        { path: 'ecommerce', element: <EcommerceCheckout /> },
-        { path: 'analytics', element: <GeneralAnalytics /> },
-        { path: 'banking', element: <Register /> },
-        { path: 'booking', element: <GeneralEcommerce /> },
-        { path: 'tools', element: <BlogNewPost /> },
-      ],
-    },
-  ]);
-}
-
-export function RouterOrigin() {
-  return useRoutes([
-    {
       path: 'auth',
       children: [
         {
