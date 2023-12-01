@@ -12,6 +12,7 @@ import Scrollbar from '../../../components/Scrollbar';
 import MenuPopover from '../../../components/MenuPopover';
 import BadgeStatus from '../../../components/BadgeStatus';
 import { IconButtonAnimate } from '../../../components/animate';
+import Image from 'src/components/Image';
 
 // ----------------------------------------------------------------------
 
@@ -44,7 +45,7 @@ export default function ContactsPopover() {
           }),
         }}
       >
-        <img src="/assets/icons/header/Chat.svg" />
+        <Image src="/assets/icons/header/Chat.svg" />
         {/* <Iconify icon={'/assets/icons/header/Chat.svg'} width={48} height={48} /> */}
         {/* <Avatar src="/assets/icons/header/Chat.svg" width={48} height={48} /> */}
       </IconButtonAnimate>

@@ -40,6 +40,7 @@ import Iconify from 'src/components/Iconify';
 import Image from 'src/components/Image';
 import LanguagePopover from 'src/layouts/dashboard/header/LanguagePopover';
 import Inputgroup from 'src/components/custom/inputgroup';
+import ProcessBtn from 'src/components/custom/processbtn';
 
 // ----------------------------------------------------------------------
 
@@ -331,7 +332,7 @@ export default function BlogNewPostForm() {
             <Inputgroup />
             <div style={{ display: 'flex', flexWrap: 'wrap' }}>
               <div>
-                <h1> Create your e-books</h1>
+                <h1 className="dropheader"> Create your e-book</h1>
                 <Image src="/assets/images/book.png" sx={{ width: 450 }} />
               </div>
               <div
@@ -339,10 +340,20 @@ export default function BlogNewPostForm() {
                 style={{
                   flexGrow: 10,
                   minWidth: 300,
-                  padding: '20px, 140px, 60px, 20px !important',
+                  padding: '70px, 140px, 60px, 20px !important',
                 }}
               >
-                <LabelStyle>Upload your book file</LabelStyle>
+                <LabelStyle
+                  sx={{
+                    color: '#676767',
+                    fontSize: '14px',
+                    fontStyle: 'normal',
+                    fontWeight: '700',
+                    marginBottom: '10px',
+                  }}
+                >
+                  Upload your book file
+                </LabelStyle>
                 <RHFUploadSingleFile
                   name="cover"
                   accept="image/*"
@@ -364,7 +375,18 @@ export default function BlogNewPostForm() {
                 >
                   your-file-here.PDF
                 </Button>
-                <LabelStyle>Upload your cover</LabelStyle>
+                <ProcessBtn />
+                <LabelStyle
+                  sx={{
+                    color: '#676767',
+                    fontSize: '14px',
+                    fontStyle: 'normal',
+                    fontWeight: '700',
+                    marginBottom: '10px',
+                  }}
+                >
+                  Upload your cover
+                </LabelStyle>
                 <RHFUploadSingleFile
                   name="cover"
                   accept="image/*"

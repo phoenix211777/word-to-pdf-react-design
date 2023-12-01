@@ -21,7 +21,7 @@ export default function () {
         className="generateinput"
         placeholder="Name of the generated book"
         style={{
-          margin: '0 10px',
+          margin: '0 40px',
           flexGrow: 8,
         }}
       />

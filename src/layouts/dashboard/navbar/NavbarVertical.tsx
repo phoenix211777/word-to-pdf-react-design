@@ -61,12 +61,13 @@ export default function NavbarVertical({ isOpenSidebar, onCloseSidebar }: Props)
         height: 1,
         '& .simplebar-content': { height: 1, display: 'flex', flexDirection: 'column' },
         backgroundColor: '#22263E',
-        width: '340px',
+        width: '340px !important',
       }}
     >
       <Stack
         spacing={3}
         sx={{
+          width: '340px !important',
           pt: 3,
           pb: 2,
           px: 2.5,
