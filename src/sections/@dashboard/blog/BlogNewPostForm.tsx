@@ -13,6 +13,7 @@ import {
   Grid,
   Card,
   Chip,
+  Input,
   Switch,
   Stack,
   TextField,
@@ -43,6 +44,8 @@ import Inputgroup from 'src/components/custom/newFile';
 import ProcessBtn from 'src/components/custom/processbtn';
 import InputSelect from 'src/components/custom/inputselect';
 import useLocales from 'src/hooks/useLocales';
+
+import { WordEditor } from 'src/components/WordEditor';
 
 // ----------------------------------------------------------------------
 
@@ -164,23 +167,23 @@ export default function BlogNewPostForm() {
           <Grid item xs={12} md={12}>
             <div className="formgroup">
               <div className="inputitem">
-                <LabelStyle sx={{ marginTop: '5px' }}>{translate('height')}</LabelStyle>
+                <LabelStyle sx={{ marginTop: '5px' }}>{translate('Height / MM')}</LabelStyle>
                 <InputSelect STATUS_OPTIONS={HEIGHT_OPTIONS} />
               </div>
               <div className="inputitem">
-                <LabelStyle sx={{ marginTop: '5px' }}>{translate('width')}</LabelStyle>
+                <LabelStyle sx={{ marginTop: '5px' }}>{translate('Width / MM')}</LabelStyle>
                 <InputSelect STATUS_OPTIONS={WIDTH_OPTIONS} />
               </div>
               <div className="inputitem flexgrow">
-                <LabelStyle sx={{ marginTop: '5px' }}>{translate('type_of_book')}</LabelStyle>
+                <LabelStyle sx={{ marginTop: '5px' }}>{translate('Type of book')}</LabelStyle>
                 <InputSelect STATUS_OPTIONS={TYPE_OF_BOOK_OPTIONS} />
               </div>
               <div className="inputitem flexgrow">
-                <LabelStyle sx={{ marginTop: '5px' }}>{translate('font_type')}</LabelStyle>
+                <LabelStyle sx={{ marginTop: '5px' }}>{translate('Font type')}</LabelStyle>
                 <InputSelect STATUS_OPTIONS={FONT_TYPE_OPTIONS} />
               </div>
               <div className="inputitem">
-                <LabelStyle sx={{ marginTop: '5px' }}>{translate('font_size')}</LabelStyle>
+                <LabelStyle sx={{ marginTop: '5px' }}>{translate('Font_size')}</LabelStyle>
                 <InputSelect STATUS_OPTIONS={FONT_SIZE_OPTIONS} />
               </div>
               <div className="inputitem">
@@ -209,7 +212,8 @@ export default function BlogNewPostForm() {
                 <Button variant="contained">{translate('load_editor')}</Button>
               </div>
             </div>
-            <RHFEditor simple name="content" />
+            <WordEditor />
+            {/* <RHFEditor simple name="content" />
             <Button
               variant="contained"
               sx={{
@@ -283,18 +287,18 @@ export default function BlogNewPostForm() {
               }}
             >
               <span className="startpdf">{translate('generate_e_book')}</span>
-            </Button>
+            </Button> */}
           </Grid>
         </Grid>
       </FormProvider>
-      <BlogNewPostPreview
+      {/* <BlogNewPostPreview
         values={values}
         isOpen={open}
         isValid={isValid}
         isSubmitting={isSubmitting}
         onClose={handleClosePreview}
         onSubmit={handleSubmit(onSubmit)}
-      />
+      /> */}
     </>
   );
 }
