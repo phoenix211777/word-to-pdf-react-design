@@ -85,7 +85,7 @@ export default function AccountPopover() {
           }),
         }}
       >
-        <MyAvatar />
+        <MyAvatar sx={{ width: 56, height: 56 }} />
       </IconButtonAnimate>
 
       <MenuPopover

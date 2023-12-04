@@ -47,6 +47,7 @@ export default function UploadSingleFile({
             color: 'error.main',
             borderColor: 'error.light',
             bgcolor: 'error.lighter',
+            backgroundColor: '#F8F8FF',
           }),
           ...(file && {
             padding: '12% 0',

@@ -39,8 +39,10 @@ import EditorToolbar from 'src/components/editor/EditorToolbar';
 import Iconify from 'src/components/Iconify';
 import Image from 'src/components/Image';
 import LanguagePopover from 'src/layouts/dashboard/header/LanguagePopover';
-import Inputgroup from 'src/components/custom/inputgroup';
+import Inputgroup from 'src/components/custom/newFile';
 import ProcessBtn from 'src/components/custom/processbtn';
+import InputSelect from 'src/components/custom/inputselect';
+import useLocales from 'src/hooks/useLocales';
 
 // ----------------------------------------------------------------------
 
@@ -66,7 +68,11 @@ const LabelStyle = styled(Typography)(({ theme }) => ({
   marginBottom: theme.spacing(1),
 }));
 
-const STATUS_OPTIONS = ['paid', 'unpaid', 'overdue', 'draft'];
+const WIDTH_OPTIONS = ['125 mm', '78 mm', '50mm', '32 mm'];
+const HEIGHT_OPTIONS = ['200 mm', '125 mm', '78 mm', '50 mm'];
+const TYPE_OF_BOOK_OPTIONS = ['paperback', 'letter', 'overdue', 'draft'];
+const FONT_TYPE_OPTIONS = ['paid', 'unpaid', 'overdue', 'draft'];
+const FONT_SIZE_OPTIONS = ['12', '14', '16', '18'];
 
 // ----------------------------------------------------------------------
 
@@ -149,6 +155,8 @@ export default function BlogNewPostForm() {
     [setValue]
   );
 
+  const { translate } = useLocales();
+
   return (
     <>
       <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
@@ -156,139 +164,27 @@ export default function BlogNewPostForm() {
           <Grid item xs={12} md={12}>
             <div className="formgroup">
               <div className="inputitem">
-                <LabelStyle>Height</LabelStyle>
-                <RHFSelect
-                  fullWidth
-                  name="height"
-                  label=""
-                  InputLabelProps={{ shrink: true }}
-                  SelectProps={{ native: false, sx: { textTransform: 'capitalize' } }}
-                >
-                  {STATUS_OPTIONS.map((option) => (
-                    <MenuItem
-                      key={option}
-                      value={option}
-                      sx={{
-                        mx: 1,
-                        my: 0.5,
-                        borderRadius: 0.75,
-                        typography: 'body2',
-                        textTransform: 'capitalize',
-                      }}
-                    >
-                      {option}
-                    </MenuItem>
-                  ))}
-                </RHFSelect>
+                <LabelStyle sx={{ marginTop: '5px' }}>{translate('height')}</LabelStyle>
+                <InputSelect STATUS_OPTIONS={HEIGHT_OPTIONS} />
               </div>
               <div className="inputitem">
-                <LabelStyle>Height</LabelStyle>
-                <RHFSelect
-                  fullWidth
-                  name="width"
-                  label=""
-                  InputLabelProps={{ shrink: true }}
-                  SelectProps={{ native: false, sx: { textTransform: 'capitalize' } }}
-                >
-                  {STATUS_OPTIONS.map((option) => (
-                    <MenuItem
-                      key={option}
-                      value={option}
-                      sx={{
-                        mx: 1,
-                        my: 0.5,
-                        borderRadius: 0.75,
-                        typography: 'body2',
-                        textTransform: 'capitalize',
-                      }}
-                    >
-                      {option}
-                    </MenuItem>
-                  ))}
-                </RHFSelect>
+                <LabelStyle sx={{ marginTop: '5px' }}>{translate('width')}</LabelStyle>
+                <InputSelect STATUS_OPTIONS={WIDTH_OPTIONS} />
               </div>
               <div className="inputitem flexgrow">
-                <LabelStyle>Type of book</LabelStyle>
-                <RHFSelect
-                  fullWidth
-                  name="width"
-                  label=""
-                  InputLabelProps={{ shrink: true }}
-                  SelectProps={{ native: false, sx: { textTransform: 'capitalize' } }}
-                >
-                  {STATUS_OPTIONS.map((option) => (
-                    <MenuItem
-                      key={option}
-                      value={option}
-                      sx={{
-                        mx: 1,
-                        my: 0.5,
-                        borderRadius: 0.75,
-                        typography: 'body2',
-                        textTransform: 'capitalize',
-                      }}
-                    >
-                      {option}
-                    </MenuItem>
-                  ))}
-                </RHFSelect>
+                <LabelStyle sx={{ marginTop: '5px' }}>{translate('type_of_book')}</LabelStyle>
+                <InputSelect STATUS_OPTIONS={TYPE_OF_BOOK_OPTIONS} />
               </div>
               <div className="inputitem flexgrow">
-                <LabelStyle>Font type</LabelStyle>
-                <RHFSelect
-                  fullWidth
-                  name="width"
-                  label=""
-                  InputLabelProps={{ shrink: true }}
-                  SelectProps={{ native: false, sx: { textTransform: 'capitalize' } }}
-                  sx={{ height: 40, boxSizing: 'border-box' }}
-                >
-                  {STATUS_OPTIONS.map((option) => (
-                    <MenuItem
-                      key={option}
-                      value={option}
-                      sx={{
-                        mx: 1,
-                        my: 0.5,
-                        borderRadius: 0.75,
-                        typography: 'body2',
-                        textTransform: 'capitalize',
-                      }}
-                    >
-                      {option}
-                    </MenuItem>
-                  ))}
-                </RHFSelect>
+                <LabelStyle sx={{ marginTop: '5px' }}>{translate('font_type')}</LabelStyle>
+                <InputSelect STATUS_OPTIONS={FONT_TYPE_OPTIONS} />
               </div>
               <div className="inputitem">
-                <LabelStyle>Font size</LabelStyle>
-                <RHFSelect
-                  fullWidth
-                  name="width"
-                  label=""
-                  InputLabelProps={{ shrink: true }}
-                  SelectProps={{ native: false, sx: { textTransform: 'capitalize' } }}
-                  sx={{ height: 40 }}
-                >
-                  {STATUS_OPTIONS.map((option) => (
-                    <MenuItem
-                      key={option}
-                      value={option}
-                      sx={{
-                        mx: 1,
-                        my: 0.5,
-                        borderRadius: 0.75,
-                        typography: 'body2',
-                        textTransform: 'capitalize',
-                      }}
-                    >
-                      {option}
-                    </MenuItem>
-                  ))}
-                </RHFSelect>
+                <LabelStyle sx={{ marginTop: '5px' }}>{translate('font_size')}</LabelStyle>
+                <InputSelect STATUS_OPTIONS={FONT_SIZE_OPTIONS} />
               </div>
               <div className="inputitem">
-                <LabelStyle> &nbsp;</LabelStyle>
+                <LabelStyle sx={{ marginTop: '5px' }}> &nbsp;</LabelStyle>
                 <Button
                   sx={{
                     width: 194,
@@ -305,12 +201,12 @@ export default function BlogNewPostForm() {
                     src="/assets/icons/header/upload-two.svg"
                     sx={{ mr: 1, boxShadow: 'none' }}
                   />
-                  Upload Word file.
+                  {translate('upload_word_file')}
                 </Button>
               </div>
               <div className="inputitem">
-                <LabelStyle> &nbsp;</LabelStyle>
-                <Button variant="contained">Load Editor</Button>
+                <LabelStyle sx={{ marginTop: '5px' }}> &nbsp;</LabelStyle>
+                <Button variant="contained">{translate('load_editor')}</Button>
               </div>
             </div>
             <RHFEditor simple name="content" />
@@ -325,24 +221,17 @@ export default function BlogNewPostForm() {
                 borderRadius: '4px',
               }}
             >
-              <span className="startpdf">Start generate PDF</span>
+              <span className="startpdf">{translate('start_generate_pdf')}</span>
               <img src="/assets/button.png" className="imgbutton" />
             </Button>
-            <h1 className="dropheader"> Generate pdf's</h1>
-            <Inputgroup />
-            <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-              <div>
-                <h1 className="dropheader"> Create your e-book</h1>
-                <Image src="/assets/images/book.png" sx={{ width: 450 }} />
-              </div>
-              <div
-                className="dropwrapper"
-                style={{
-                  flexGrow: 10,
-                  minWidth: 300,
-                  padding: '70px, 140px, 60px, 20px !important',
-                }}
-              >
+            <h1 className="dropheader"> {translate('generate_pdf_s')}</h1>
+            <Inputgroup title={true} />
+            <Grid container spacing={3}>
+              <Grid item xs={12} md={6} lg={4}>
+                <h1 className="dropheader">{translate('create_your_e_book')}</h1>
+                <Image src="/assets/images/book.png" className="PDFimg" sx={{ width: '100%' }} />
+              </Grid>
+              <Grid item xs={12} md={6} lg={7} sx={{ padding: '110px 0px 0px 70px !important' }}>
                 <LabelStyle
                   sx={{
                     color: '#676767',
@@ -352,7 +241,7 @@ export default function BlogNewPostForm() {
                     marginBottom: '10px',
                   }}
                 >
-                  Upload your book file
+                  {translate('upload_your_book_file')}
                 </LabelStyle>
                 <RHFUploadSingleFile
                   name="cover"
@@ -360,22 +249,7 @@ export default function BlogNewPostForm() {
                   maxSize={3145728}
                   onDrop={handleDrop}
                 />
-                <Button
-                  sx={{
-                    width: '100%',
-                    height: 55,
-                    margin: '24px 0',
-                    backgroundColor: 'white',
-                    color: 'black',
-                    boxShadow: 'none',
-                    border: '1px solid #d2d2d2',
-                    textAlign: 'left !important',
-                  }}
-                  variant="contained"
-                >
-                  your-file-here.PDF
-                </Button>
-                <ProcessBtn />
+                <ProcessBtn process={60} />
                 <LabelStyle
                   sx={{
                     color: '#676767',
@@ -385,7 +259,7 @@ export default function BlogNewPostForm() {
                     marginBottom: '10px',
                   }}
                 >
-                  Upload your cover
+                  {translate('upload_your_cover')}
                 </LabelStyle>
                 <RHFUploadSingleFile
                   name="cover"
@@ -393,8 +267,10 @@ export default function BlogNewPostForm() {
                   maxSize={3145728}
                   onDrop={handleDrop}
                 />
-              </div>
-            </div>
+                <ProcessBtn process={60} />
+              </Grid>
+            </Grid>
+            <Inputgroup title={false} />
             <Button
               variant="contained"
               sx={{
@@ -406,25 +282,11 @@ export default function BlogNewPostForm() {
                 borderRadius: '4px',
               }}
             >
-              <span className="startpdf">GENERATE E- BOOK</span>
+              <span className="startpdf">{translate('generate_e_book')}</span>
             </Button>
-            <Card sx={{ p: 3 }}>
-              <Stack spacing={3}>
-                <div>
-                  <LabelStyle>Cover</LabelStyle>
-                  <RHFUploadSingleFile
-                    name="cover"
-                    accept="image/*"
-                    maxSize={3145728}
-                    onDrop={handleDrop}
-                  />
-                </div>
-              </Stack>
-            </Card>
           </Grid>
         </Grid>
       </FormProvider>
-
       <BlogNewPostPreview
         values={values}
         isOpen={open}

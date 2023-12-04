@@ -73,6 +73,8 @@ export default function DashboardHeader({
 
   const isDesktop = useResponsive('up', 'lg');
 
+  const HEADER_TITLE: string = 'format_a_book';
+
   return (
     <RootStyle isCollapse={isCollapse} isOffset={isOffset} verticalLayout={verticalLayout}>
       <Toolbar
@@ -89,7 +91,7 @@ export default function DashboardHeader({
           </IconButtonAnimate>
         )}
 
-        <HeaderTitle title="Format a book" />
+        <HeaderTitle title={HEADER_TITLE} />
         <Box sx={{ flexGrow: 1 }} />
 
         <Stack direction="row" alignItems="center" spacing={{ xs: 0.5, sm: 1.5 }}>

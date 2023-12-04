@@ -46,14 +46,14 @@ const navConfig = [
     items: [
       { title: 'dashboard', path: PATH_DASHBOARD.general.app, icon: ICONS.home },
       {
-        title: 'nieuwe aanmeldingen',
+        title: 'new_registrations',
         path: PATH_DASHBOARD.general.ecommerce,
         icon: ICONS.edit,
       },
-      { title: 'projecten', path: PATH_DASHBOARD.general.analytics, icon: ICONS.image },
-      { title: 'schrijvers', path: PATH_DASHBOARD.general.banking, icon: ICONS.doc },
+      { title: 'projects', path: PATH_DASHBOARD.general.analytics, icon: ICONS.image },
+      { title: 'writers', path: PATH_DASHBOARD.general.banking, icon: ICONS.doc },
       {
-        title: 'berichten',
+        title: 'to_inform',
         path: PATH_DASHBOARD.general.booking,
         icon: ICONS.chat,
         info: <Label color="error">1</Label>,

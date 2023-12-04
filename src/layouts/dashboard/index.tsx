@@ -27,8 +27,8 @@ const MainStyle = styled('main', {
   paddingTop: HEADER.MOBILE_HEIGHT + 24,
   paddingBottom: HEADER.MOBILE_HEIGHT + 24,
   [theme.breakpoints.up('lg')]: {
-    paddingLeft: 16,
-    paddingRight: 16,
+    // paddingLeft: 16,
+    // paddingRight: 16,
     paddingTop: HEADER.DASHBOARD_DESKTOP_HEIGHT + 24,
     paddingBottom: HEADER.DASHBOARD_DESKTOP_HEIGHT + 24,
     width: `calc(100% - ${NAVBAR.DASHBOARD_WIDTH}px)`,
@@ -92,7 +92,10 @@ export default function DashboardLayout() {
 
       <NavbarVertical isOpenSidebar={open} onCloseSidebar={() => setOpen(false)} />
 
-      <MainStyle collapseClick={collapseClick}>
+      <MainStyle
+        collapseClick={collapseClick}
+        sx={{ margin: '0px', paddingBottom: '0px !important' }}
+      >
         <Outlet />
       </MainStyle>
     </Box>
