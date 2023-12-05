@@ -52,6 +52,9 @@ import { AuthProvider } from './contexts/JWTContext';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
+import { registerLicense } from '@syncfusion/ej2-base';
+
+registerLicense('ORg4AjUWIQA/Gnt2VlhiQlVPd0BGQmFJfFdmTWlde1RwdkU3HVdTRHRcQ19jTH5bckBjXHxfdXA=');
 
 // ----------------------------------------------------------------------
 

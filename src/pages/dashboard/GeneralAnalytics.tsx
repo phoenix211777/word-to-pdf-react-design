@@ -29,7 +29,7 @@ export default function GeneralAnalytics() {
 
   return (
     <Page title="General: Analytics">
-      <Container maxWidth={themeStretch ? false : 'xl'}>
+      {/* <Container maxWidth={themeStretch ? false : 'xl'}>
         <Typography variant="h4" sx={{ mb: 5 }}>
           Hi, Welcome back
         </Typography>
@@ -185,7 +185,7 @@ export default function GeneralAnalytics() {
             />
           </Grid>
         </Grid>
-      </Container>
+      </Container> */}
     </Page>
   );
 }

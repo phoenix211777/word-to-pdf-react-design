@@ -100,7 +100,7 @@ export default function EcommerceCheckout() {
 
   return (
     <Page title="Ecommerce: Checkout">
-      <Container maxWidth={themeStretch ? false : 'lg'}>
+      {/* <Container maxWidth={themeStretch ? false : 'lg'}>
         <HeaderBreadcrumbs
           heading="Checkout"
           links={[
@@ -144,7 +144,7 @@ export default function EcommerceCheckout() {
         ) : (
           <CheckoutOrderComplete open={isComplete} />
         )}
-      </Container>
+      </Container> */}
     </Page>
   );
 }

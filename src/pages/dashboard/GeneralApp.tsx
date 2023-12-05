@@ -35,7 +35,7 @@ export default function GeneralApp() {
 
   return (
     <Page title="General: App">
-      <Container maxWidth={themeStretch ? false : 'xl'}>
+      {/* <Container maxWidth={themeStretch ? false : 'xl'}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={8}>
             <AppWelcome
@@ -169,7 +169,7 @@ export default function GeneralApp() {
             </Stack>
           </Grid>
         </Grid>
-      </Container>
+      </Container> */}
     </Page>
   );
 }

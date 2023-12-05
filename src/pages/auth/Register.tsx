@@ -69,7 +69,7 @@ export default function Register() {
 
   return (
     <Page title="Register">
-      <RootStyle>
+      {/* <RootStyle>
         <HeaderStyle>
           <Logo />
           {smUp && (
@@ -142,7 +142,7 @@ export default function Register() {
             )}
           </ContentStyle>
         </Container>
-      </RootStyle>
+      </RootStyle> */}
     </Page>
   );
 }

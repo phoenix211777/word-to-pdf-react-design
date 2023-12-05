@@ -46,6 +46,7 @@ import InputSelect from 'src/components/custom/inputselect';
 import useLocales from 'src/hooks/useLocales';
 
 import { WordEditor } from 'src/components/WordEditor';
+import { WordEditorSelect } from 'src/components/WordEditorSelect';
 
 // ----------------------------------------------------------------------
 
@@ -71,11 +72,11 @@ const LabelStyle = styled(Typography)(({ theme }) => ({
   marginBottom: theme.spacing(1),
 }));
 
-const WIDTH_OPTIONS = ['125 mm', '78 mm', '50mm', '32 mm'];
-const HEIGHT_OPTIONS = ['200 mm', '125 mm', '78 mm', '50 mm'];
-const TYPE_OF_BOOK_OPTIONS = ['paperback', 'letter', 'overdue', 'draft'];
-const FONT_TYPE_OPTIONS = ['paid', 'unpaid', 'overdue', 'draft'];
-const FONT_SIZE_OPTIONS = ['12', '14', '16', '18'];
+const WIDTH_OPTIONS = ['125', '78', '50', '32'];
+const HEIGHT_OPTIONS = ['200', '125', '78', '50'];
+const TYPE_OF_BOOK_OPTIONS = ['Paperback Book', 'Hardcover Book', 'E-book'];
+const FONT_TYPE_OPTIONS = ['Garamond 11', 'unpaid', 'overdue', 'draft'];
+const FONT_SIZE_OPTIONS = ['11', '14', '16', '18'];
 
 // ----------------------------------------------------------------------
 
@@ -83,6 +84,7 @@ export default function BlogNewPostForm() {
   const navigate = useNavigate();
 
   const [open, setOpen] = useState(false);
+  const [loadEditorFlag, setLoadEditorFlag] = useState(false);
 
   const { enqueueSnackbar } = useSnackbar();
 
@@ -158,6 +160,55 @@ export default function BlogNewPostForm() {
     [setValue]
   );
 
+  const handleFileChange = () => {
+    const container_toolbar_open = document.getElementById("container_toolbar_open");
+    console.log("======== open click =========")
+    container_toolbar_open?.click();
+  };
+
+  
+  const loadEditor = () => {
+    setLoadEditorFlag(true);
+    console.log("========");
+    // const container_toolbar_page_setup = document.getElementById("container_toolbar_page_setup");
+    // container_toolbar_page_setup?.click();
+    // const container_toolbar_page_set = document.getElementById("container_toolbar_page_set");
+    // container_toolbar_page_set?.click();
+    // const tabs =  document.querySelectorAll('[data-id="tabitem_1"]');
+    // const paper_tab = tabs[2] as HTMLDivElement;
+    // paper_tab.click();
+
+    // let widthInputBox =  document.getElementById("numerictextbox_23") as HTMLInputElement ;
+    // let nextWidthInput = widthInputBox.nextElementSibling as HTMLInputElement;
+    // let heightInputBox =  document.getElementById("numerictextbox_24") as HTMLInputElement;
+    // let nextHeightInput = heightInputBox.nextElementSibling as HTMLInputElement;
+    // let applyPaperSize = document.getElementsByClassName("e-layout-ppty-okay");
+
+    // function delay(ms: number): Promise<void> {
+    //   return new Promise(resolve => setTimeout(resolve, ms));
+    // }
+    
+    // // Usage within an async function
+    // async function handleActionWithDelay() {
+    //   console.log('Action started...');
+      
+    //   // Wait for 1 second (1000 milliseconds)
+    //   await delay(300);
+      
+    //   console.log('Action finished after 1 second delay.');
+    // }
+    
+    // // Example call to the async function
+    // handleActionWithDelay();
+    
+    // const width = Math.round(175 * 3.7795275591).toString();
+    // const height = Math.round(175 * 3.7795275591).toString();
+    // nextWidthInput.value = width;
+    // nextHeightInput.value = height;
+    // widthInputBox.value = width;
+    // heightInputBox.value = height;
+  }
+
   const { translate } = useLocales();
 
   return (
@@ -165,54 +216,7 @@ export default function BlogNewPostForm() {
       <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={12}>
-            <div className="formgroup">
-              <div className="inputitem">
-                <LabelStyle sx={{ marginTop: '5px' }}>{translate('Height / MM')}</LabelStyle>
-                <InputSelect STATUS_OPTIONS={HEIGHT_OPTIONS} />
-              </div>
-              <div className="inputitem">
-                <LabelStyle sx={{ marginTop: '5px' }}>{translate('Width / MM')}</LabelStyle>
-                <InputSelect STATUS_OPTIONS={WIDTH_OPTIONS} />
-              </div>
-              <div className="inputitem flexgrow">
-                <LabelStyle sx={{ marginTop: '5px' }}>{translate('Type of book')}</LabelStyle>
-                <InputSelect STATUS_OPTIONS={TYPE_OF_BOOK_OPTIONS} />
-              </div>
-              <div className="inputitem flexgrow">
-                <LabelStyle sx={{ marginTop: '5px' }}>{translate('Font type')}</LabelStyle>
-                <InputSelect STATUS_OPTIONS={FONT_TYPE_OPTIONS} />
-              </div>
-              <div className="inputitem">
-                <LabelStyle sx={{ marginTop: '5px' }}>{translate('Font_size')}</LabelStyle>
-                <InputSelect STATUS_OPTIONS={FONT_SIZE_OPTIONS} />
-              </div>
-              <div className="inputitem">
-                <LabelStyle sx={{ marginTop: '5px' }}> &nbsp;</LabelStyle>
-                <Button
-                  sx={{
-                    width: 194,
-                    p: 2,
-                    height: 40,
-                    backgroundColor: 'white',
-                    color: 'black',
-                    boxShadow: 'none',
-                    border: '1px solid #d2d2d2',
-                  }}
-                  variant="contained"
-                >
-                  <Image
-                    src="/assets/icons/header/upload-two.svg"
-                    sx={{ mr: 1, boxShadow: 'none' }}
-                  />
-                  {translate('upload_word_file')}
-                </Button>
-              </div>
-              <div className="inputitem">
-                <LabelStyle sx={{ marginTop: '5px' }}> &nbsp;</LabelStyle>
-                <Button variant="contained">{translate('load_editor')}</Button>
-              </div>
-            </div>
-            <WordEditor />
+            <WordEditor  />
             {/* <RHFEditor simple name="content" />
             <Button
               variant="contained"

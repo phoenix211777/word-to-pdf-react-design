@@ -39,7 +39,7 @@ export default function GeneralEcommerce() {
 
   return (
     <Page title="General: E-commerce">
-      <Container maxWidth={themeStretch ? false : 'xl'}>
+      {/* <Container maxWidth={themeStretch ? false : 'xl'}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={8}>
             <AppWelcome
@@ -161,7 +161,7 @@ export default function GeneralEcommerce() {
             <EcommerceLatestProducts title="Latest Products" list={_ecommerceLatestProducts} />
           </Grid>
         </Grid>
-      </Container>
+      </Container> */}
     </Page>
   );
 }
