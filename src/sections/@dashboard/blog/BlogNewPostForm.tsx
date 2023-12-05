@@ -170,43 +170,7 @@ export default function BlogNewPostForm() {
   const loadEditor = () => {
     setLoadEditorFlag(true);
     console.log("========");
-    // const container_toolbar_page_setup = document.getElementById("container_toolbar_page_setup");
-    // container_toolbar_page_setup?.click();
-    // const container_toolbar_page_set = document.getElementById("container_toolbar_page_set");
-    // container_toolbar_page_set?.click();
-    // const tabs =  document.querySelectorAll('[data-id="tabitem_1"]');
-    // const paper_tab = tabs[2] as HTMLDivElement;
-    // paper_tab.click();
-
-    // let widthInputBox =  document.getElementById("numerictextbox_23") as HTMLInputElement ;
-    // let nextWidthInput = widthInputBox.nextElementSibling as HTMLInputElement;
-    // let heightInputBox =  document.getElementById("numerictextbox_24") as HTMLInputElement;
-    // let nextHeightInput = heightInputBox.nextElementSibling as HTMLInputElement;
-    // let applyPaperSize = document.getElementsByClassName("e-layout-ppty-okay");
-
-    // function delay(ms: number): Promise<void> {
-    //   return new Promise(resolve => setTimeout(resolve, ms));
-    // }
     
-    // // Usage within an async function
-    // async function handleActionWithDelay() {
-    //   console.log('Action started...');
-      
-    //   // Wait for 1 second (1000 milliseconds)
-    //   await delay(300);
-      
-    //   console.log('Action finished after 1 second delay.');
-    // }
-    
-    // // Example call to the async function
-    // handleActionWithDelay();
-    
-    // const width = Math.round(175 * 3.7795275591).toString();
-    // const height = Math.round(175 * 3.7795275591).toString();
-    // nextWidthInput.value = width;
-    // nextHeightInput.value = height;
-    // widthInputBox.value = width;
-    // heightInputBox.value = height;
   }
 
   const { translate } = useLocales();
@@ -216,93 +180,12 @@ export default function BlogNewPostForm() {
       <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={12}>
-            <WordEditor  />
-            {/* <RHFEditor simple name="content" />
-            <Button
-              variant="contained"
-              sx={{
-                width: '100%',
-                height: '65px',
-                mt: 3,
-                mb: 3,
-                backgroundColor: '#b7190f',
-                borderRadius: '4px',
-              }}
-            >
-              <span className="startpdf">{translate('start_generate_pdf')}</span>
-              <img src="/assets/button.png" className="imgbutton" />
-            </Button>
-            <h1 className="dropheader"> {translate('generate_pdf_s')}</h1>
-            <Inputgroup title={true} />
-            <Grid container spacing={3}>
-              <Grid item xs={12} md={6} lg={4}>
-                <h1 className="dropheader">{translate('create_your_e_book')}</h1>
-                <Image src="/assets/images/book.png" className="PDFimg" sx={{ width: '100%' }} />
-              </Grid>
-              <Grid item xs={12} md={6} lg={7} sx={{ padding: '110px 0px 0px 70px !important' }}>
-                <LabelStyle
-                  sx={{
-                    color: '#676767',
-                    fontSize: '14px',
-                    fontStyle: 'normal',
-                    fontWeight: '700',
-                    marginBottom: '10px',
-                  }}
-                >
-                  {translate('upload_your_book_file')}
-                </LabelStyle>
-                <RHFUploadSingleFile
-                  name="cover"
-                  accept="image/*"
-                  maxSize={3145728}
-                  onDrop={handleDrop}
-                />
-                <ProcessBtn process={60} />
-                <LabelStyle
-                  sx={{
-                    color: '#676767',
-                    fontSize: '14px',
-                    fontStyle: 'normal',
-                    fontWeight: '700',
-                    marginBottom: '10px',
-                  }}
-                >
-                  {translate('upload_your_cover')}
-                </LabelStyle>
-                <RHFUploadSingleFile
-                  name="cover"
-                  accept="image/*"
-                  maxSize={3145728}
-                  onDrop={handleDrop}
-                />
-                <ProcessBtn process={60} />
-              </Grid>
-            </Grid>
-            <Inputgroup title={false} />
-            <Button
-              variant="contained"
-              sx={{
-                width: '100%',
-                height: '65px',
-                mt: 3,
-                mb: 3,
-                backgroundColor: '#b7190f',
-                borderRadius: '4px',
-              }}
-            >
-              <span className="startpdf">{translate('generate_e_book')}</span>
-            </Button> */}
+          <WordEditor  />
+
           </Grid>
         </Grid>
       </FormProvider>
-      {/* <BlogNewPostPreview
-        values={values}
-        isOpen={open}
-        isValid={isValid}
-        isSubmitting={isSubmitting}
-        onClose={handleClosePreview}
-        onSubmit={handleSubmit(onSubmit)}
-      /> */}
+    
     </>
   );
 }

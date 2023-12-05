@@ -126,17 +126,17 @@ export default function WordEditor() {
 
 
   return (
-    <>
+    <div style={{height:"88vh", overflow:'auto'}}>
       <div className="formgroup">
           <div className="inputitem">
             <LabelStyle sx={{ marginTop: '5px' }}>{translate('Width / MM')}</LabelStyle>
             <input className='select-bar' type='number' value={width} onChange={(e)=>{setWidth(Number(e.target.value))}} />
-            {/* <WordEditorSelect STATUS_OPTIONS={HEIGHT_OPTIONS} /> */}
+           
           </div>
           <div className="inputitem">
             <LabelStyle sx={{ marginTop: '5px' }}>{translate('Height / MM')}</LabelStyle>
             <input className='select-bar' type='number' value={height}  onChange={(e)=>{setHeight(Number(e.target.value))}}/>
-            {/* <WordEditorSelect STATUS_OPTIONS={WIDTH_OPTIONS} /> */}
+            
           </div>
           <div className="inputitem flexgrow">
             <LabelStyle sx={{ marginTop: '5px' }}>{translate('Type of book')}</LabelStyle>
@@ -149,7 +149,7 @@ export default function WordEditor() {
           <div className="inputitem">
             <LabelStyle sx={{ marginTop: '5px' }}>{translate('Font_size')} </LabelStyle>
             <input className='select-bar' type='number' value={fontSize}  onChange={(e)=>{setFontSize(Number(e.target.value))}}/>
-            {/* <WordEditorSelect STATUS_OPTIONS={FONT_SIZE_OPTIONS} /> */}
+           
           </div>
           <div className="inputitem">
             <LabelStyle sx={{ marginTop: '5px' }}> &nbsp;</LabelStyle>
@@ -177,19 +177,16 @@ export default function WordEditor() {
             <Button variant="contained" onClick={loadEditor}>{translate('load_editor')}</Button>
           </div>
         </div>
-        <div className="control-pane">
-          <div className="control-section">
-              <div id="documenteditor_titlebar" className="e-de-ctn-title"></div>
-              <div id="documenteditor_container_body">
+        {/* <div className="control-pane"> */}
+          {/* <div className="control-section"> */}
+              {/* <div id="documenteditor_titlebar" className="e-de-ctn-title"></div>
+              <div id="documenteditor_container_body"> */}
                 <DocumentEditorContainerComponent id="container" ref={(scope) => {container = scope!; }}
                   height={'590px'}
                   serviceUrl={hostUrl}
-                  enableToolbar={true}
-                  // created={onCreate}
-                />
-                  {/* <DocumentEditorContainerComponent id="container"  style={{ display: "block" }} height={"590px"} serviceUrl={hostUrl} enableToolbar={true} locale="en-US"/> */}
-              </div>
-          </div>
+                  enableToolbar={true}                 
+                />                 
+                
           <Button
             variant="contained"
             sx={{
@@ -205,8 +202,8 @@ export default function WordEditor() {
             <span className="startpdf">{translate('start_generate_pdf')}</span>
             <img src="/assets/button.png" className="imgbutton" />
           </Button>
-      </div>
-    </>
+      {/* </div> */}
+    </div>
     
   );
 }
